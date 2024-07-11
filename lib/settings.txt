@@ -1,0 +1,146 @@
+import 'package:flutter/material.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+
+class User {
+  final String id;
+  final String email;
+  final double height;
+  final double weight;
+  final String firstName;
+  final String lastName;
+  final int age;
+
+  User(
+      {required this.id,
+      required this.email,
+      required this.height,
+      required this.weight,
+      required this.firstName,
+      required this.lastName,
+      required this.age});
+}
+
+class SettingsPage extends StatefulWidget {
+  final String userId;
+
+  SettingsPage({required this.userId});
+
+  @override
+  _SettingsPageState createState() => _SettingsPageState();
+}
+
+class _SettingsPageState extends State<SettingsPage> {
+  final _formKey = GlobalKey<FormState>();
+  late User user;
+
+  @override
+  void initState() {
+    super.initState();
+    fetchUserData();
+  }
+
+  Future<void> fetchUserData() async {
+    DocumentSnapshot userSnapshot = await FirebaseFirestore.instance
+        .collection('users')
+        .doc(widget.userId)
+        .get();
+
+    if (userSnapshot.exists) {
+      Map<String, dynamic> userData =
+          userSnapshot.data() as Map<String, dynamic>; // Cast to Map
+
+      setState(() {
+        user = User(
+          id: widget.userId,
+          email: userData['Email'] ?? '',
+          height: userData['Height']?.toDouble() ?? 0.0,
+          weight: userData['Weight']?.toDouble() ?? 0.0,
+          firstName: userData['First-Name'] ?? '',
+          lastName: userData['Last-Name'] ?? '',
+          age: userData['Age'] ?? 0,
+        );
+      });
+    }
+  }
+
+  Future<void> updateUserData() async {
+    if (_formKey.currentState!.validate()) {
+      _formKey.currentState!.save();
+      await FirebaseFirestore.instance
+          .collection('users')
+          .doc(widget.userId)
+          .update({
+        'First-Name': user.firstName,
+        'Last-Name': user.lastName,
+        'Height': user.height,
+        'Weight': user.weight,
+        'Age': user.age,
+      });
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text("Settings"),
+      ),
+      body: user != null
+          ? Form(
+              key: _formKey,
+              child: Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: ListView(
+                  children: [
+                    TextFormField(
+                      initialValue: user.firstName,
+                      decoration: InputDecoration(labelText: 'First Name'),
+                      onSaved: (value) {
+                        user.firstName = value!;
+                      },
+                    ),
+                    TextFormField(
+                      initialValue: user.lastName,
+                      decoration: InputDecoration(labelText: 'Last Name'),
+                      onSaved: (value) {
+                        user.lastName = value!;
+                      },
+                    ),
+                    TextFormField(
+                      initialValue: user.height.toString(),
+                      decoration: InputDecoration(labelText: 'Height (cm)'),
+                      keyboardType: TextInputType.number,
+                      onSaved: (value) {
+                        user.height = double.parse(value!);
+                      },
+                    ),
+                    TextFormField(
+                      initialValue: user.weight.toString(),
+                      decoration: InputDecoration(labelText: 'Weight (kg)'),
+                      keyboardType: TextInputType.number,
+                      onSaved: (value) {
+                        user.weight = double.parse(value!);
+                      },
+                    ),
+                    TextFormField(
+                      initialValue: user.age.toString(),
+                      decoration: InputDecoration(labelText: 'Age'),
+                      keyboardType: TextInputType.number,
+                      onSaved: (value) {
+                        user.age = int.parse(value!);
+                      },
+                    ),
+                    SizedBox(height: 20),
+                    ElevatedButton(
+                      onPressed: updateUserData,
+                      child: Text('Save'),
+                    ),
+                  ],
+                ),
+              ),
+            )
+          : Center(child: CircularProgressIndicator()),
+    );
+  }
+}
+

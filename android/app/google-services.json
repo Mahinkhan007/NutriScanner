@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "251630107051",
+    "project_id": "nutriscan-17f0e",
+    "storage_bucket": "nutriscan-17f0e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251630107051:android:2f1a834a4281d8ccef7aee",
+        "android_client_info": {
+          "package_name": "com.mahin.nutri_scan"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCQQnCsft8KvPEhyL5UyKtNssnH10EXnmE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
