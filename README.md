@@ -44,7 +44,7 @@ Powered by **OpenAI**, **OpenFoodFacts**, and **Firebase**, NutriScanner not onl
 
 | Login & BMR Setup | Product Scan & Analysis | AI Chat & Suggestions | HomePage |
 |-------------------|--------------------------|------------------------|
-| ![]([Registration screen.png](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/Registration%20screen.png)) | ![]([link-to-scan-result-image](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/zma.png?raw=true)) | ![]([link-to-ai-chat-image](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/ai%20chat.png)) | ![](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/simulator_screenshot_246F93D2-FF9F-4DF0-9887-9432B20E544A.png) |
+| ![](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/Registration%20screen.png)| ![](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/zma.png?raw=true) | ![](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/ai%20chat.png)| ![](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/simulator_screenshot_246F93D2-FF9F-4DF0-9887-9432B20E544A.png) |
 
 ---
 
