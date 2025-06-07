@@ -1,7 +1,7 @@
 # 🧠 NutriScanner – AI-Powered Nutrition Barcode Scanner
 
 <p align="center">
-  <img src="YOUR_BANNER_IMAGE_LINK_HERE" alt="NutriScanner Banner" />
+  <img src="https://github.com/Mahinkhan007/NutriScanner/blob/main/images/Creative.jpg" />
 </p>
 
 ---
@@ -42,9 +42,9 @@ Powered by **OpenAI**, **OpenFoodFacts**, and **Firebase**, NutriScanner not onl
 
 > _Replace these placeholder links with your actual screenshots._
 
-| Login & BMR Setup | Product Scan & Analysis | AI Chat & Suggestions |
+| Login & BMR Setup | Product Scan & Analysis | AI Chat & Suggestions | HomePage |
 |-------------------|--------------------------|------------------------|
-| ![](link-to-login-image) | ![](link-to-scan-result-image) | ![](link-to-ai-chat-image) |
+| ![]([Registration screen.png](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/Registration%20screen.png)) | ![]([link-to-scan-result-image](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/zma.png?raw=true)) | ![]([link-to-ai-chat-image](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/ai%20chat.png)) | ![](https://github.com/Mahinkhan007/NutriScanner/blob/main/images/simulator_screenshot_246F93D2-FF9F-4DF0-9887-9432B20E544A.png) |
 
 ---
 
@@ -77,6 +77,8 @@ Powered by **OpenAI**, **OpenFoodFacts**, and **Firebase**, NutriScanner not onl
 ## 🛠 Setup & Installation
 
 > Requires Flutter & Firebase setup.
+
+## [Presentation slides](https://www.canva.com/design/DAF02VfWE6c/P5ywV7xm0ql1hjmmt86kpg/edit?utm_content=DAF02VfWE6c&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 
 ## Fully developed from scratch by - Abdulla Al Mahin Khan - All rights reserved.  
